@@ -1,0 +1,22 @@
+{
+	"name": "cur-docker",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start:dev": "nodemon ./src/app.js",
+		"start": "node ./src/app.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"typeorm": "^0.3.12"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.21"
+	}
+}
