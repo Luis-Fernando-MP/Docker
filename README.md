@@ -1,26 +1,47 @@
-# 1. Hello Docker
+# `1. Hello Docker`
 
-- [x] #739
-- [ ] https://github.com/octo-org/octo-repo/issues/740
-- [ ] Add delight to the experience when all tasks are complete :tada:
+## `1.0. Images`
 
-### 1.0.1. Add Images
+### 1.0.1. Add
 
 ```bash
-  ▶ docker pull [nameImage]:[version]
+  ▶ docker pull [image_name]:[version]
 ```
 
-### 1.0.2. Remove Images
+### 1.0.2. Remove
 
-````bash
-  ▶ docker image rm [nameImage]
+```bash
+  ▶ docker image rm [image_name]:[version]
 ```
 
-Basic tutorial of Docker [Youtube](https://youtu.be/4Dko5W96WHg)
-````
+### 1.0.3. All
 
-`asddgdfgdfgdf gdfg dfg dfg`
+```bash
+  ▶ docker image
+```
 
-- [1. Hello Docker](#1-hello-docker)
-  - [1.0.1. Add Images](#101-add-images)
-  - [1.0.2. Remove Images](#102-remove-images)
+## `1.1. Containers`
+
+### 1.1.0. Add
+
+```bash
+  ▶ docker create [image_name]
+```
+
+### 1.1.0. Execute
+
+```bash
+  ▶ docker start [image_id]
+```
+
+### 1.1.0. Show
+
+```bash
+  ▶ docker ps !(-a)
+```
+
+<b>`stop container`</b>
+
+```bash
+  ▶ docker stop
+```
