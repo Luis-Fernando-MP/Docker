@@ -4,13 +4,15 @@ import express, { json } from 'express'
 import { cwd } from 'process'
 import { config } from 'dotenv'
 
-const app = express()
 config({ path: path.resolve(cwd(), '/.env') })
-app.set('PORT', process.env.PORT || 3000)
+
+const PORT = process.env.NODE_DOCKER_PORT || 8080
+const app = express()
+app.set('PORT', PORT)
 
 app.use(json())
 
-//routers
+// routers
 app.use(router)
 
 export default app

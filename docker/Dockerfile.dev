@@ -1,0 +1,14 @@
+FROM node:18-alpine3.16
+
+RUN npm i -g pnpm
+RUN npm i -g nodemon
+
+WORKDIR /home/app/
+
+COPY . .
+
+RUN pnpm install
+
+EXPOSE 3000
+
+CMD [ "nodemon", "./src/app.js" ]
