@@ -1,4 +1,4 @@
-FROM node:18-alpine3.16 as install
+FROM node:18-alpine3.16 AS install
 LABEL stage=install
 RUN npm install -g pnpm
 WORKDIR /src/install
@@ -6,20 +6,19 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm i
 
 
-FROM node:18-alpine3.16 as build
+FROM node:18-alpine3.16 AS build
 LABEL stage=build
 RUN npm install -g pnpm
 WORKDIR /src/build
 COPY --from=install /src/install .
 COPY . .
-RUN pnpm run build
-RUN pnpm i -P
+RUN pnpm run build && pnpm i -P
 
 
-FROM node:18-alpine3.16 as deploy
+FROM node:18-alpine3.16 AS deploy
 WORKDIR /app
 COPY --from=build /src/build/dist/main.js index.js
 COPY --from=build /src/build/node_modules node_modules
 
 
-ENTRYPOINT node .
+ENTRYPOINT ["node", "."]

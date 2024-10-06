@@ -8,6 +8,8 @@ COPY package.json pnpm-lock.yaml ./
 
 RUN pnpm i
 
+EXPOSE 3000
+
 COPY . .
 
-ENTRYPOINT pnpm start:dev
+ENTRYPOINT ["pnpm", "start:dev"]

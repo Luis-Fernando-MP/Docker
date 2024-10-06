@@ -1,3 +1,5 @@
+[MD principal](./README.md)
+
 ### LS
 
 - bridge: usa nuestra red física
@@ -33,5 +35,5 @@
 ❯ docker network create [nombre]
 ❯ docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=ju mysql --network juju_net
 ❯ docker network connect [redNueva] [contenedor]
-❯ docker network dis connect [redNueva] [contenedor]
+❯ docker network disconnect [redNueva] [contenedor]
 ```
